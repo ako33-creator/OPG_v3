@@ -1,0 +1,108 @@
+"""
+OPG Core Constants.
+
+Official shared constants for the OPG core layer.
+
+Rules:
+- No Blender dependency.
+- No external dependency.
+- Constants must remain stable and explicit.
+"""
+
+
+APP_NAME = "OPG"
+APP_FULL_NAME = "OXAHO Product Generator"
+APP_MAJOR_VERSION = 3
+APP_MINOR_VERSION = 0
+APP_PATCH_VERSION = 0
+APP_VERSION = f"{APP_MAJOR_VERSION}.{APP_MINOR_VERSION}.{APP_PATCH_VERSION}"
+
+
+PACKAGE_NAME = "opg"
+CORE_PACKAGE_NAME = "opg.core"
+
+
+LOGGER_NAME = "opg"
+LOGGER_CORE_NAME = "opg.core"
+
+
+CONFIG_APP_NAME = "app.name"
+CONFIG_APP_VERSION = "app.version"
+CONFIG_APP_DEBUG = "app.debug"
+CONFIG_LOGGING_LEVEL = "logging.level"
+
+
+DEFAULT_DEBUG = False
+DEFAULT_LOGGING_LEVEL = "INFO"
+
+
+SERVICE_CONFIG = "config"
+SERVICE_LOGGER = "logger"
+SERVICE_MODULE_MANAGER = "module_manager"
+SERVICE_PLUGIN_LOADER = "plugin_loader"
+
+
+MODULE_CORE = "core"
+MODULE_AI = "ai"
+MODULE_ANIMATION = "animation"
+MODULE_ASSETS = "assets"
+MODULE_BLUEPRINT = "blueprint"
+MODULE_BUILDERS = "builders"
+MODULE_CAMERA = "camera"
+MODULE_CATALOG = "catalog"
+MODULE_CONFIGURATOR = "configurator"
+MODULE_DECALS = "decals"
+MODULE_DRAWINGS = "drawings"
+MODULE_EXPORT = "export"
+MODULE_LAYOUT = "layout"
+MODULE_MATERIALS = "materials"
+MODULE_OPERATORS = "operators"
+MODULE_PANELS = "panels"
+MODULE_RENDER = "render"
+MODULE_RESOURCES = "resources"
+MODULE_SERVICES = "services"
+MODULE_TESTS = "tests"
+MODULE_UI = "ui"
+MODULE_UTILS = "utils"
+MODULE_UV = "uv"
+
+
+OFFICIAL_MODULES = (
+    MODULE_AI,
+    MODULE_ANIMATION,
+    MODULE_ASSETS,
+    MODULE_BLUEPRINT,
+    MODULE_BUILDERS,
+    MODULE_CAMERA,
+    MODULE_CATALOG,
+    MODULE_CONFIGURATOR,
+    MODULE_CORE,
+    MODULE_DECALS,
+    MODULE_DRAWINGS,
+    MODULE_EXPORT,
+    MODULE_LAYOUT,
+    MODULE_MATERIALS,
+    MODULE_OPERATORS,
+    MODULE_PANELS,
+    MODULE_RENDER,
+    MODULE_RESOURCES,
+    MODULE_SERVICES,
+    MODULE_TESTS,
+    MODULE_UI,
+    MODULE_UTILS,
+    MODULE_UV,
+)
+
+
+LIFECYCLE_CREATED = "created"
+LIFECYCLE_INITIALIZED = "initialized"
+LIFECYCLE_RUNNING = "running"
+LIFECYCLE_STOPPED = "stopped"
+LIFECYCLE_FAILED = "failed"
+
+
+STATUS_REGISTERED = "registered"
+STATUS_INITIALIZED = "initialized"
+STATUS_STARTED = "started"
+STATUS_STOPPED = "stopped"
+STATUS_FAILED = "failed"
