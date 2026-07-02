@@ -1,92 +1,183 @@
-# Service Registry
-
-Version: 3.0  
-Status: Draft  
-Ticket: M-003-003
-
----
+# Runtime Service Registry
 
 ## Purpose
 
-The Service Registry is the central registry of runtime services in OPG.
+The Runtime Service Registry manages the registration, resolution, and lifecycle of all runtime services.
 
-It allows the Runtime to register, retrieve, validate, and manage services.
+It acts as the central service provider for the entire runtime system.
 
-No service may be accessed directly without going through the Service Registry.
-
----
-
-## Responsibilities
-
-The Service Registry shall:
-
-- register runtime services
-- expose services by name
-- prevent duplicate service registration
-- validate service availability
-- provide controlled access to services
-- support runtime initialization order
+It ensures that services are resolved in a deterministic, dependency-safe, and lifecycle-aware manner.
 
 ---
 
-## Design Rules
+## Architecture
 
-The Service Registry:
+The Service Registry is built as a dependency-aware service container.
 
-- does not create business logic
-- does not own module logic
-- does not depend on Blender
-- does not import plugin-specific code
-- belongs to the Core Architecture
+It maintains:
 
----
+- Registered services
+- Service factories
+- Service metadata
+- Dependency graph of services
 
-## Service Lifecycle
+The registry is initialized during the Runtime Builder phase and becomes active during runtime execution.
 
-1. Service declared
-2. Service registered
-3. Service validated
-4. Service available
-5. Service used by Runtime or modules
-6. Service released during shutdown
+The Service Registry is thread-safe.
 
----
-
-## Required Core Services
-
-The initial Service Registry shall support:
-
-- Configuration Service
-- Logging Service
-- Plugin Manager
-- Runtime Graph
-- Event Bus
-- Command Bus
+Rules:
+- Concurrent reads are allowed
+- Writes are serialized
+- Service resolution is atomic
+- Cache access is synchronized
 
 ---
 
-## Access Rule
+## Service Model
 
-All services must be requested through the registry.
+Each service is defined by:
 
-Direct global access is forbidden.
+- Service ID
+- Service Type
+- Dependencies
+- Initialization strategy
+- Lifecycle scope
+
+Services can be:
+
+- Singleton (one instance per runtime)
+- Transient (created on demand)
+- Scoped (bound to runtime context)
 
 ---
 
-## Failure Rules
+## Service State Model
 
-The Service Registry must fail when:
+Each service follows a strict lifecycle:
 
-- a required service is missing
-- a service is registered twice
-- a service name is invalid
-- a service is requested before registration
+- CREATED
+- INITIALIZED
+- ACTIVE
+- DEACTIVATING
+- DESTROYED
+- FAILED
+
+State transitions are controlled by the Runtime Manager and Service Registry.
+
+Invalid transitions are forbidden.
 
 ---
 
-## Future Implementation
+## Service Registration
 
-The future Python implementation will be located under:
+Services are registered during the build phase.
 
-```text
-SRC/opg/core/services/
+Registration process:
+
+1. Declare service definition
+2. Validate dependencies
+3. Store metadata
+4. Register factory
+
+No service is instantiated during registration.
+
+---
+
+## Service Resolution
+
+Service resolution is performed at runtime.
+
+Process:
+
+1. Request service
+2. Validate dependency graph
+3. Resolve dependencies recursively
+4. Instantiate service if needed
+5. Return service instance
+
+Resolution is deterministic.
+
+### Singleton Cache Rule
+
+Singleton services are cached after first initialization.
+
+Cache is invalidated only during:
+
+- runtime shutdown
+- service re-registration (if supported)
+
+---
+
+## Dependency Integration
+
+The Service Registry integrates tightly with the Runtime Dependency System.
+
+It ensures:
+- Services are initialized in correct order
+- Dependencies are resolved before instantiation
+- Circular dependencies are rejected
+
+### Cycle Detection Responsibility
+
+Circular dependency detection is performed during the Runtime Builder phase.
+
+The Service Registry assumes only validated dependency graphs.
+
+---
+
+## Lifecycle Management
+
+The Service Registry manages service lifecycle:
+
+- INITIALIZED
+- ACTIVE
+- DEACTIVATING
+- DESTROYED
+
+Services are destroyed during runtime shutdown in reverse dependency order.
+
+---
+
+## Relationship with Runtime Builder
+
+The Runtime Builder defines service structure and validates dependencies.
+
+The Service Registry executes service instantiation based on this structure.
+
+---
+
+## Relationship with Runtime Manager
+
+The Runtime Manager controls when services are initialized and destroyed.
+
+It ensures service lifecycle aligns with runtime lifecycle.
+
+---
+
+## Relationship with Runtime Context
+
+The Runtime Context provides runtime scope for service usage.
+
+Services may access context but do not own it.
+
+---
+
+## Best Practices
+
+- Avoid circular dependencies
+- Keep services stateless when possible
+- Use singleton for core systems only
+- Minimize service coupling
+- Prefer explicit dependency declaration
+- Ensure thread-safe service access
+- Avoid hidden service state mutation
+
+---
+
+## Future Extensions
+
+- Lazy service loading
+- Distributed service registry
+- Hot-swappable services
+- Service versioning
+- AI-assisted dependency optimization
