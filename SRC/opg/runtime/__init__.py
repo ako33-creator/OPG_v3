@@ -5,6 +5,7 @@ from .runtime_builder import RuntimeBuilder
 from .runtime_service_registry import RuntimeServiceRegistry
 from .runtime_dependency_system import RuntimeDependencySystem
 from .runtime_configuration import RuntimeConfiguration
+from .runtime_memory import RuntimeMemory
 
 __all__ = [
     "RuntimeContext",
@@ -15,4 +16,5 @@ __all__ = [
     "RuntimeServiceRegistry",
     "RuntimeDependencySystem",
     "RuntimeConfiguration",
+    "RuntimeMemory",
 ]
