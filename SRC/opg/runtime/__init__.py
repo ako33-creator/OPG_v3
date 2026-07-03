@@ -7,6 +7,7 @@ from .runtime_dependency_system import RuntimeDependencySystem
 from .runtime_configuration import RuntimeConfiguration
 from .runtime_memory import RuntimeMemory
 from .runtime_graph import RuntimeGraph
+from .runtime_plugin_system import RuntimePluginSystem
 __all__ = [
     "RuntimeContext",
     "RuntimeManager",
@@ -18,4 +19,5 @@ __all__ = [
     "RuntimeConfiguration",
     "RuntimeMemory",
     "RuntimeGraph",
+    "RuntimePluginSystem",
 ]
