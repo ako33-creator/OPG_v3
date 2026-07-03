@@ -41,6 +41,12 @@ from .runtime_health_system import (
     RuntimeHealthStatus,
     RuntimeHealthSystem,
 )
+from .runtime_recovery_system import (
+    RuntimeRecoveryAction,
+    RuntimeRecoveryResult,
+    RuntimeRecoveryState,
+    RuntimeRecoverySystem,
+)
 __all__ = [
     "RuntimeContext",
     "RuntimeManager",
@@ -74,4 +80,8 @@ __all__ = [
     "RuntimeHealthCheck",
     "RuntimeHealthStatus",
     "RuntimeHealthSystem",
+    "RuntimeRecoveryAction",
+    "RuntimeRecoveryResult",
+    "RuntimeRecoveryState",
+    "RuntimeRecoverySystem",
 ]
