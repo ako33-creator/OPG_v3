@@ -1,4 +1,7 @@
-from .constants import DEFAULT_PROJECT_VERSION, PROJECT_MODEL_SCHEMA_VERSION
+from .constants import (
+    DEFAULT_PROJECT_VERSION,
+    PROJECT_MODEL_SCHEMA_VERSION,
+)
 from .errors import ProjectModelError
 from .project import Project
 
