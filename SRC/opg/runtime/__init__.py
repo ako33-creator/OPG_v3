@@ -32,6 +32,10 @@ from .runtime_logging_system import (
     RuntimeLogRecord,
     RuntimeLogLevel,
 )
+from .runtime_metrics_system import (
+    RuntimeMetric,
+    RuntimeMetricsSystem,
+)
 __all__ = [
     "RuntimeContext",
     "RuntimeManager",
@@ -60,4 +64,6 @@ __all__ = [
     "RuntimeLoggingSystem",
     "RuntimeLogRecord",
     "RuntimeLogLevel",
+    "RuntimeMetric",
+    "RuntimeMetricsSystem",
 ]
