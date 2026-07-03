@@ -8,6 +8,7 @@ from .runtime_configuration import RuntimeConfiguration
 from .runtime_memory import RuntimeMemory
 from .runtime_graph import RuntimeGraph
 from .runtime_plugin_system import RuntimePluginSystem
+from .runtime_scheduler import RuntimeScheduler, RuntimeTask, RuntimeTaskStatus
 __all__ = [
     "RuntimeContext",
     "RuntimeManager",
@@ -20,4 +21,7 @@ __all__ = [
     "RuntimeMemory",
     "RuntimeGraph",
     "RuntimePluginSystem",
+    "RuntimeScheduler",
+    "RuntimeTask",
+    "RuntimeTaskStatus",
 ]
