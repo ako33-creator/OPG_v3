@@ -7,6 +7,7 @@ from .constants import DEFAULT_PROJECT_VERSION, PROJECT_MODEL_SCHEMA_VERSION
 from .deserialization import ProjectDeserializer
 from .errors import ProjectModelError
 from .metadata import Metadata
+from .migration import ProjectMigration
 from .object import Object
 from .project import Project
 from .scene import Scene
@@ -25,6 +26,7 @@ __all__ = [
     "PROJECT_MODEL_SCHEMA_VERSION",
     "Project",
     "ProjectDeserializer",
+    "ProjectMigration",
     "ProjectModelError",
     "ProjectSerializer",
     "ProjectVersion",
