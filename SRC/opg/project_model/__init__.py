@@ -4,6 +4,7 @@ from .asset_reference import AssetReference
 from .collection import Collection
 from .component import Component
 from .constants import DEFAULT_PROJECT_VERSION, PROJECT_MODEL_SCHEMA_VERSION
+from .deserialization import ProjectDeserializer
 from .errors import ProjectModelError
 from .metadata import Metadata
 from .object import Object
@@ -22,6 +23,7 @@ __all__ = [
     "Object",
     "PROJECT_MODEL_SCHEMA_VERSION",
     "Project",
+    "ProjectDeserializer",
     "ProjectModelError",
     "ProjectSerializer",
     "Scene",
