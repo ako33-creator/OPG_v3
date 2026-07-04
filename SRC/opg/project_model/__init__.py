@@ -8,6 +8,7 @@ from .object import Object
 from .component import Component
 from .scene import Scene
 from .collection import Collection
+from .asset_reference import AssetReference
 
 __all__ = [
     "DEFAULT_PROJECT_VERSION",
@@ -18,4 +19,5 @@ __all__ = [
     "Component",
     "Scene",
     "Collection",
+    "AssetReference",
 ]
