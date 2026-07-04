@@ -1,6 +1,7 @@
 """Public API for the OPG Project Model package."""
 
 from .asset_reference import AssetReference
+from .cloning import ProjectCloner
 from .collection import Collection
 from .component import Component
 from .constants import DEFAULT_PROJECT_VERSION, PROJECT_MODEL_SCHEMA_VERSION
@@ -25,6 +26,7 @@ __all__ = [
     "Object",
     "PROJECT_MODEL_SCHEMA_VERSION",
     "Project",
+    "ProjectCloner",
     "ProjectDeserializer",
     "ProjectMigration",
     "ProjectModelError",
