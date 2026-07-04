@@ -3,6 +3,7 @@
 from .asset_reference import AssetReference
 from .cloning import ProjectCloner
 from .collection import Collection
+from .comparison import ProjectComparator, ProjectComparison
 from .component import Component
 from .constants import DEFAULT_PROJECT_VERSION, PROJECT_MODEL_SCHEMA_VERSION
 from .deserialization import ProjectDeserializer
@@ -27,6 +28,8 @@ __all__ = [
     "PROJECT_MODEL_SCHEMA_VERSION",
     "Project",
     "ProjectCloner",
+    "ProjectComparator",
+    "ProjectComparison",
     "ProjectDeserializer",
     "ProjectMigration",
     "ProjectModelError",
