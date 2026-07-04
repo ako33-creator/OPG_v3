@@ -6,6 +6,7 @@ from .errors import ProjectModelError
 from .project import Project
 from .object import Object
 from .component import Component
+from .scene import Scene
 
 __all__ = [
     "DEFAULT_PROJECT_VERSION",
@@ -14,4 +15,5 @@ __all__ = [
     "ProjectModelError",
     "Object",
     "Component",
+    "Scene",
 ]
