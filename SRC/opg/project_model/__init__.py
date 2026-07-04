@@ -13,6 +13,7 @@ from .scene import Scene
 from .serialization import ProjectSerializer
 from .uuid_manager import UUIDManager
 from .validation import ValidationError, ValidationResult
+from .versioning import ProjectVersion
 
 __all__ = [
     "AssetReference",
@@ -26,6 +27,7 @@ __all__ = [
     "ProjectDeserializer",
     "ProjectModelError",
     "ProjectSerializer",
+    "ProjectVersion",
     "Scene",
     "UUIDManager",
     "ValidationError",
