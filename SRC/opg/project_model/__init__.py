@@ -7,6 +7,7 @@ from .project import Project
 from .object import Object
 from .component import Component
 from .scene import Scene
+from .collection import Collection
 
 __all__ = [
     "DEFAULT_PROJECT_VERSION",
@@ -16,4 +17,5 @@ __all__ = [
     "Object",
     "Component",
     "Scene",
+    "Collection",
 ]
