@@ -9,6 +9,7 @@ from .metadata import Metadata
 from .object import Object
 from .project import Project
 from .scene import Scene
+from .serialization import ProjectSerializer
 from .uuid_manager import UUIDManager
 from .validation import ValidationError, ValidationResult
 
@@ -22,6 +23,7 @@ __all__ = [
     "PROJECT_MODEL_SCHEMA_VERSION",
     "Project",
     "ProjectModelError",
+    "ProjectSerializer",
     "Scene",
     "UUIDManager",
     "ValidationError",
