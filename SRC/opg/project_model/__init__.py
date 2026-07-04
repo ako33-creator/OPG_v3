@@ -10,6 +10,7 @@ from .object import Object
 from .project import Project
 from .scene import Scene
 from .uuid_manager import UUIDManager
+from .validation import ValidationError, ValidationResult
 
 __all__ = [
     "AssetReference",
@@ -23,4 +24,6 @@ __all__ = [
     "ProjectModelError",
     "Scene",
     "UUIDManager",
+    "ValidationError",
+    "ValidationResult",
 ]
