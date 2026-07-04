@@ -7,6 +7,7 @@ from .comparison import ProjectComparator, ProjectComparison
 from .component import Component
 from .constants import DEFAULT_PROJECT_VERSION, PROJECT_MODEL_SCHEMA_VERSION
 from .deserialization import ProjectDeserializer
+from .diff import ProjectDiff, ProjectDiffer
 from .errors import ProjectModelError
 from .metadata import Metadata
 from .migration import ProjectMigration
@@ -31,6 +32,8 @@ __all__ = [
     "ProjectComparator",
     "ProjectComparison",
     "ProjectDeserializer",
+    "ProjectDiff",
+    "ProjectDiffer",
     "ProjectMigration",
     "ProjectModelError",
     "ProjectSerializer",
