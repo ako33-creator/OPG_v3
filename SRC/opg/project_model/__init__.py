@@ -5,6 +5,7 @@ from .constants import (
 from .errors import ProjectModelError
 from .project import Project
 from .object import Object
+from .component import Component
 
 __all__ = [
     "DEFAULT_PROJECT_VERSION",
@@ -12,4 +13,5 @@ __all__ = [
     "Project",
     "ProjectModelError",
     "Object",
+    "Component",
 ]
