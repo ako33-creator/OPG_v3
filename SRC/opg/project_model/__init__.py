@@ -9,6 +9,9 @@ from .constants import DEFAULT_PROJECT_VERSION, PROJECT_MODEL_SCHEMA_VERSION
 from .deserialization import ProjectDeserializer
 from .diff import ProjectDiff, ProjectDiffer
 from .query import ProjectQuery, ProjectQueryEngine
+from .snapshot import ProjectSnapshot, ProjectSnapshotter
+from .event import ProjectEvent, ProjectEventBus
+from .registry import ProjectRegistry
 from .errors import ProjectModelError
 from .metadata import Metadata
 from .migration import ProjectMigration
@@ -37,6 +40,11 @@ __all__ = [
     "ProjectDiffer",
     "ProjectQuery",
     "ProjectQueryEngine",
+    "ProjectSnapshot",
+    "ProjectSnapshotter",
+    "ProjectEvent",
+    "ProjectEventBus",
+    "ProjectRegistry",
     "ProjectMigration",
     "ProjectModelError",
     "ProjectSerializer",
