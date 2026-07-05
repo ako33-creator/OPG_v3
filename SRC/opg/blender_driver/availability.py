@@ -1,10 +1,11 @@
-"""Blender availability detection for OPG."""
+"""Availability wiring for the Blender driver."""
 
-from __future__ import annotations
-
-import importlib.util
+from opg.driver.availability import DriverAvailability
 
 
-def is_blender_available() -> bool:
-    """Return whether the Blender Python API module is available."""
-    return importlib.util.find_spec("bpy") is not None
+class BlenderDriverAvailability:
+    """Provides Blender driver availability state."""
+
+    def get_availability(self) -> DriverAvailability:
+        """Return the current Blender driver availability."""
+        return DriverAvailability.AVAILABLE
