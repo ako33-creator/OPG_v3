@@ -52,6 +52,7 @@ from .control_state import RuntimeControlSnapshot
 from .control_plane_impl import DefaultRuntimeControlPlane
 from .lifecycle_coordinator import RuntimeLifecycleCoordinator
 from .lifecycle_policy import DefaultRuntimeLifecyclePolicy, RuntimeLifecyclePolicy
+from .lifecycle_guard import RuntimeLifecycleGuard
 __all__ = [
     "RuntimeContext",
     "RuntimeManager",
@@ -96,4 +97,5 @@ __all__ = [
     "RuntimeLifecycleCoordinator",
     "RuntimeLifecyclePolicy",
      "DefaultRuntimeLifecyclePolicy",
+     "RuntimeLifecycleGuard",
     ]
