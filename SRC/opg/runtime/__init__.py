@@ -50,6 +50,7 @@ from .runtime_recovery_system import (
 from .control_plane import RuntimeControlPlane, RuntimeControlState
 from .control_state import RuntimeControlSnapshot
 from .control_plane_impl import DefaultRuntimeControlPlane
+from .lifecycle_coordinator import RuntimeLifecycleCoordinator
 __all__ = [
     "RuntimeContext",
     "RuntimeManager",
@@ -91,4 +92,5 @@ __all__ = [
     "RuntimeControlState",
     "RuntimeControlSnapshot",
     "DefaultRuntimeControlPlane",
+    "RuntimeLifecycleCoordinator",
     ]
