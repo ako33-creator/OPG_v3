@@ -1,28 +1,25 @@
-"""Public API for the OPG Blender Driver package."""
+"""Public API for the OPG Blender driver package."""
 
-from .availability import is_blender_available
-from .camera_adapter import BlenderCameraAccessAdapter
-from .collection_adapter import BlenderCollectionAccessAdapter
-from .command_dispatcher import BlenderDriverCommandDispatcher
-from .context_adapter import BlenderContextAdapter
-from .identity import BLENDER_DRIVER_NAME, BLENDER_DRIVER_VERSION
-from .lifecycle import BlenderDriverLifecycle
-from .light_adapter import BlenderLightAccessAdapter
-from .material_adapter import BlenderMaterialAccessAdapter
-from .object_adapter import BlenderObjectAccessAdapter
-from .scene_adapter import BlenderSceneAccessAdapter
+from opg.blender_driver.adapter_bundle import BlenderDriverAdapterBundle
+from opg.blender_driver.availability import BlenderDriverAvailability
+from opg.blender_driver.bootstrap import bootstrap_blender_driver
+from opg.blender_driver.command_dispatch import BlenderDriverCommandDispatch
+from opg.blender_driver.context import BlenderDriverContext
+from opg.blender_driver.driver import BlenderDriver
+from opg.blender_driver.factory import BlenderDriverFactory
+from opg.blender_driver.lifecycle import BlenderDriverLifecycle
+from opg.blender_driver.registration import register_blender_driver
+from opg.blender_driver.validation import validate_blender_driver
 
 __all__ = [
-    "BLENDER_DRIVER_NAME",
-    "BLENDER_DRIVER_VERSION",
-    "BlenderCameraAccessAdapter",
-    "BlenderCollectionAccessAdapter",
-    "BlenderContextAdapter",
-    "BlenderDriverCommandDispatcher",
+    "BlenderDriver",
+    "BlenderDriverAdapterBundle",
+    "BlenderDriverAvailability",
+    "BlenderDriverCommandDispatch",
+    "BlenderDriverContext",
+    "BlenderDriverFactory",
     "BlenderDriverLifecycle",
-    "BlenderLightAccessAdapter",
-    "BlenderMaterialAccessAdapter",
-    "BlenderObjectAccessAdapter",
-    "BlenderSceneAccessAdapter",
-    "is_blender_available",
+    "bootstrap_blender_driver",
+    "register_blender_driver",
+    "validate_blender_driver",
 ]
