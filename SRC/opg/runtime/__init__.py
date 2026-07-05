@@ -49,6 +49,7 @@ from .runtime_recovery_system import (
 )
 from .control_plane import RuntimeControlPlane, RuntimeControlState
 from .control_state import RuntimeControlSnapshot
+from .control_plane_impl import DefaultRuntimeControlPlane
 __all__ = [
     "RuntimeContext",
     "RuntimeManager",
@@ -86,7 +87,8 @@ __all__ = [
     "RuntimeRecoveryResult",
     "RuntimeRecoveryState",
     "RuntimeRecoverySystem",
-   "RuntimeControlPlane",
+    "RuntimeControlPlane",
     "RuntimeControlState",
     "RuntimeControlSnapshot",
+    "DefaultRuntimeControlPlane",
     ]
