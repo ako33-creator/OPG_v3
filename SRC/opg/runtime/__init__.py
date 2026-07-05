@@ -54,6 +54,7 @@ from .lifecycle_coordinator import RuntimeLifecycleCoordinator
 from .lifecycle_policy import DefaultRuntimeLifecyclePolicy, RuntimeLifecyclePolicy
 from .lifecycle_guard import RuntimeLifecycleGuard
 from .lifecycle_transition import RuntimeLifecycleTransition
+from .lifecycle_history import RuntimeLifecycleHistory
 __all__ = [
     "RuntimeContext",
     "RuntimeManager",
@@ -100,4 +101,5 @@ __all__ = [
      "DefaultRuntimeLifecyclePolicy",
      "RuntimeLifecycleGuard",
      "RuntimeLifecycleTransition",
+     "RuntimeLifecycleHistory",
     ]
